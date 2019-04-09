@@ -32,13 +32,13 @@ class Main extends Component {
             <nav className="navbar">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link" href="/">Link 1</a>
+                  <a className="nav-link" href="/">Home</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/">Link 2</a>
+                  <a className="nav-link" href="/">Search</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/">Link 3</a>
+                  <a className="nav-link" href="/">About</a>
                 </li>
               </ul>
             </nav>
@@ -246,17 +246,17 @@ class Main extends Component {
         && (this.state.eyeColor === "Any" || this.state.eyeColor === array["eyeColor"])
         && (this.state.hairColor === "Any" || this.state.hairColor === array["hairColor"])) {
         this.searchContent.push(<div className="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-0">
-        <div className="hovereffect">
-        <img
-            className="img-thumbnail border-bottom-0 rounded-0"
-            src={require("./" + array["photo"])}
-            alt="img"/>
+          <div className="hovereffect">
+            <img
+              className="img-thumbnail border-bottom-0 rounded-0"
+              src={require("./" + array["photo"])}
+              alt="img" />
             <div className="overlay">
-               <h2>{array["name"]}</h2>
-               <a className="info" href="#">Age: {array["age"]}</a>
+              <h2>{array["name"]}</h2>
+              <a className="info" href="#">Age: {array["age"]}</a>
             </div>
-        </div>
-    </div>)
+          </div>
+        </div>)
       }
     });
 
