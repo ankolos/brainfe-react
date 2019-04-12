@@ -54,4 +54,5 @@ class Header extends Component {
       .catch(error => console.log(error));
   }
 }
+
 export default Header;
