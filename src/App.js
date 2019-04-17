@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import Home from './Home';
-import Search from './Search';
-import About from './About';
-import Footer from './Footer';
-import Navbar from './Navbar';
-import LoginControl from './LoginControl';
+import Header from './component/Header';
+import Home from './component/Home';
+import Search from './component/Search';
+import About from './component/About';
+import Footer from './component/Footer';
+import Navbar from './component/Navbar';
+import LoginControl from './component/LoginControl';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {

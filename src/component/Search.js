@@ -1,44 +1,6 @@
 import React, { Component } from 'react';
-import { data } from './data';
-import './Search.css';
-
-const age = Array.from({ length: 62 }, (v, k) => k + 18);
-const sexuality = [
-  "Any",
-  "Hetero",
-  "Homo",
-  "Bi",
-];
-const race = [
-  "Any",
-  "Caucasian",
-  "Asian",
-  "Black/African",
-  "Mixed/Other",
-  "Oriental",
-  "Latino/Hispanic",
-  "Middle eastern",
-  "Native American",
-];
-const eyeColor = [
-  "Any",
-  "Blue",
-  "Brown",
-  "Green",
-  "Hazel",
-  "Grey",
-  "Other",
-];
-const hairColor = [
-  "Any",
-  "Black",
-  "Brown",
-  "Red",
-  "Blonde",
-  "White",
-  "Shaven/Bald",
-  "Other",
-];
+import { data, age, sexuality, race, eyeColor, hairColor } from '../config/data';
+import '../css/Search.css';
 
 class Search extends Component {
   constructor() {
@@ -178,7 +140,7 @@ class Search extends Component {
           <div className="hovereffect">
             <img
               className="img-thumbnail border-bottom-0 rounded-0"
-              src={require("./" + array["photo"])}
+              src={array["photo"]}
               alt="img" />
             <div className="overlay">
               <h2>{array["name"]}</h2>

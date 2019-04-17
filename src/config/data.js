@@ -1,3 +1,41 @@
+export const age = Array.from({ length: 62 }, (v, k) => k + 18);
+export const sexuality = [
+  "Any",
+  "Hetero",
+  "Homo",
+  "Bi",
+];
+export const race = [
+  "Any",
+  "Caucasian",
+  "Asian",
+  "Black/African",
+  "Mixed/Other",
+  "Oriental",
+  "Latino/Hispanic",
+  "Middle eastern",
+  "Native American",
+];
+export const eyeColor = [
+  "Any",
+  "Blue",
+  "Brown",
+  "Green",
+  "Hazel",
+  "Grey",
+  "Other",
+];
+export const hairColor = [
+  "Any",
+  "Black",
+  "Brown",
+  "Red",
+  "Blonde",
+  "White",
+  "Shaven/Bald",
+  "Other",
+];
+
 export const data = [
   {
     "name": "Arianna",

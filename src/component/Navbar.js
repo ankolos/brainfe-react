@@ -35,10 +35,10 @@ class NavItem extends Component {
       <li className="nav-item">
         <div className="container">
           <div className="row">
-            <div className="col-8">
+            <div className="col-8 border border-dark">
               <Link className="nav-link mr-2" to={this.props.path}>{this.props.page}</Link>
             </div>
-            <div className="col-4 p-0">
+            <div className="col-4 border border-dark p-0">
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target={"#" + this.props.id}>
                 <span className="navbar-toggler-icon"></span>
               </button>
@@ -58,5 +58,4 @@ class NavItem extends Component {
     );
   }
 }
-
 export default Navbar;

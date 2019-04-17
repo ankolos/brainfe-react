@@ -40,7 +40,6 @@ class LoginControl extends React.Component {
     );
   }
 }
-
 export default LoginControl;
 
 function LoginButton(props) {

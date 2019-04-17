@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './assets/images/logo.png';
+import logo from '../assets/images/logo.png';
 
 class Header extends Component {
   constructor() {
@@ -54,5 +54,4 @@ class Header extends Component {
       .catch(error => console.log(error));
   }
 }
-
 export default Header;
