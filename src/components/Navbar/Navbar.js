@@ -56,5 +56,4 @@ class NavItem extends Component {
     );
   }
 }
-
 export default Navbar;

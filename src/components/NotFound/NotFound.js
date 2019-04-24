@@ -7,5 +7,4 @@ class NotFound extends Component {
     );
   }
 }
-
 export default NotFound;

@@ -36,7 +36,6 @@ class Login extends Component {
     if (this.state.redirectToReferrer || sessionStorage.getItem('userData')) {
       return (<Redirect to={'/'} />)
     }
-
     return (
       <div className="row" id="Body">
         <div className="medium-5 columns left">
@@ -52,5 +51,4 @@ class Login extends Component {
     );
   }
 }
-
 export default Login;

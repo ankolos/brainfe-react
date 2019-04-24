@@ -39,7 +39,6 @@ class Signup extends Component {
     if (this.state.redirectToReferrer || sessionStorage.getItem('userData')) {
       return (<Redirect to={'/'} />)
     }
-
     return (
       <div className="row " id="Body">
         <div className="medium-5 columns left">
@@ -60,5 +59,4 @@ class Signup extends Component {
     );
   }
 }
-
 export default Signup;
