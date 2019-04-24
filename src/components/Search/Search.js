@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { data, age, sexuality, race, eyeColor, hairColor } from '../.././config/data';
 import './Search.css';
+import Navbar from '../../components/Navbar/Navbar';
 
 class Search extends Component {
   constructor() {
@@ -24,53 +25,56 @@ class Search extends Component {
 
   render() {
     return (
-      <div className="col border border-dark rounded mt-2 mr-2 mb-2 p-0">
+      <React.Fragment>
+        <Navbar />
+        <div className="col border border-dark rounded mt-2 mr-2 mb-2 p-0">
 
-        {/* Search form*/}
-        <form id="search-form">
-          <div className="row border rounded m-2 pt-2 pb-2">
-            <div className="col pl-2 pr-2">
-              <label htmlFor="age">Age:</label>
-              <select className="form-control" id="age" value={this.state.age} onChange={this.handleAge}>
-                <option value="Any">Any</option>
-                {age.map((v, k) => <option key={k} value={v}>{v}</option>)}
-              </select>
+          {/* Search form*/}
+          <form id="search-form">
+            <div className="row border rounded m-2 pt-2 pb-2">
+              <div className="col pl-2 pr-2">
+                <label htmlFor="age">Age:</label>
+                <select className="form-control" id="age" value={this.state.age} onChange={this.handleAge}>
+                  <option value="Any">Any</option>
+                  {age.map((v, k) => <option key={k} value={v}>{v}</option>)}
+                </select>
+              </div>
+              <div className="col pl-0 pr-2">
+                <label htmlFor="sexuality">Sexuality:</label>
+                <select className="form-control" id="sexuality" value={this.state.sexuality} onChange={this.handleSexuality}>
+                  {sexuality.map((v, k) => <option key={k} value={v}>{v}</option>)}
+                </select>
+              </div>
+              <div className="col pl-0 pr-2">
+                <label htmlFor="race">Race:</label>
+                <select className="form-control" id="race" value={this.state.race} onChange={this.handleRace}>
+                  {race.map((v, k) => <option key={k} value={v}>{v}</option>)}
+                </select>
+              </div>
+              <div className="col pl-0 pr-2">
+                <label htmlFor="eyeColor">Eye color:</label>
+                <select className="form-control" id="eyeColor" value={this.state.eyeColor} onChange={this.handleEyeColor}>
+                  {eyeColor.map((v, k) => <option key={k} value={v}>{v}</option>)}
+                </select>
+              </div>
+              <div className="col pl-0 pr-2">
+                <label htmlFor="hairColor">Hair color:</label>
+                <select className="form-control" id="hairColor" value={this.state.hairColor} onChange={this.handleHairColor}>
+                  {hairColor.map((v, k) => <option key={k} value={v}>{v}</option>)}
+                </select>
+              </div>
+              <div className="d-flex flex-column pr-2">
+                <button type="button" className="btn btn-outline-dark mt-auto" onClick={this.buildSearchContent}>Search</button>
+              </div>
             </div>
-            <div className="col pl-0 pr-2">
-              <label htmlFor="sexuality">Sexuality:</label>
-              <select className="form-control" id="sexuality" value={this.state.sexuality} onChange={this.handleSexuality}>
-                {sexuality.map((v, k) => <option key={k} value={v}>{v}</option>)}
-              </select>
-            </div>
-            <div className="col pl-0 pr-2">
-              <label htmlFor="race">Race:</label>
-              <select className="form-control" id="race" value={this.state.race} onChange={this.handleRace}>
-                {race.map((v, k) => <option key={k} value={v}>{v}</option>)}
-              </select>
-            </div>
-            <div className="col pl-0 pr-2">
-              <label htmlFor="eyeColor">Eye color:</label>
-              <select className="form-control" id="eyeColor" value={this.state.eyeColor} onChange={this.handleEyeColor}>
-                {eyeColor.map((v, k) => <option key={k} value={v}>{v}</option>)}
-              </select>
-            </div>
-            <div className="col pl-0 pr-2">
-              <label htmlFor="hairColor">Hair color:</label>
-              <select className="form-control" id="hairColor" value={this.state.hairColor} onChange={this.handleHairColor}>
-                {hairColor.map((v, k) => <option key={k} value={v}>{v}</option>)}
-              </select>
-            </div>
-            <div className="d-flex flex-column pr-2">
-              <button type="button" className="btn btn-outline-dark mt-auto" onClick={this.buildSearchContent}>Search</button>
-            </div>
+          </form>
+
+          {/* Search content*/}
+          <div className="row justify-content-start border rounded m-2 p-2">
+            {this.state.content}
           </div>
-        </form>
-
-        {/* Search content*/}
-        <div className="row justify-content-start border rounded m-2 p-2">
-          {this.state.content}
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 
