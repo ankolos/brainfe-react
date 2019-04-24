@@ -21,11 +21,15 @@ class Logout extends Component {
       return (<Redirect to={'/login'} />)
     }
     return (
-      <div className="secondery off-canvas position-left reveal-for-large " id="my-info" data-off-canvas data-position="left">
-        <div className="row column">
-          <button type="button" className="button" onClick={this.logout}> Logout</button>
+      <li className="nav-item">
+        <div className="container">
+          <div className="row">
+            <div className="col-8">
+              <a className="nav-link mr-2" onClick={this.logout}>Logout</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </li>
     );
   }
 }
