@@ -1,8 +1,30 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
+import Logout from '../../components/Logout/Logout';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      redirectToReferrer: false
+    };
+  }
+
+  componentWillMount() {
+    if (sessionStorage.getItem("userData")) {
+
+    }
+    else {
+      this.setState({ redirectToReferrer: true });
+    }
+  }
+
   render() {
+    if (this.state.redirectToReferrer) {
+      return (<Redirect to={'/login'} />)
+    }
     return (
       <React.Fragment>
         <Navbar />

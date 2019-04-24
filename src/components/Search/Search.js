@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { data, age, sexuality, race, eyeColor, hairColor } from '../.././config/data';
 import './Search.css';
 import Navbar from '../../components/Navbar/Navbar';
 
 class Search extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.searchContent = [];
     this.state = {
       age: "Any",
@@ -13,7 +14,8 @@ class Search extends Component {
       race: "Any",
       eyeColor: "Any",
       hairColor: "Any",
-      content: this.searchContent
+      content: this.searchContent,
+      redirectToReferrer: false
     };
     this.handleAge = this.handleAge.bind(this);
     this.handleSexuality = this.handleSexuality.bind(this);
@@ -23,7 +25,19 @@ class Search extends Component {
     this.buildSearchContent = this.buildSearchContent.bind(this);
   }
 
+  componentWillMount() {
+    if (sessionStorage.getItem("userData")) {
+
+    }
+    else {
+      this.setState({ redirectToReferrer: true });
+    }
+  }
+
   render() {
+    if (this.state.redirectToReferrer) {
+      return (<Redirect to={'/login'} />)
+    }
     return (
       <React.Fragment>
         <Navbar />

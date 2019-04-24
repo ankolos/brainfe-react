@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import Logout from '../../components/Logout/Logout';
 
 class Navbar extends Component {
   render() {
@@ -18,6 +19,7 @@ class Navbar extends Component {
               page="Search"
               path="/search"
               links={["searchlink1", "searchlink2", "searchlink3"]} />
+              <Logout/>
           </ul>
         </nav>
       </div>
