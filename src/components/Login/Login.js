@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import {Redirect} from 'react-router-dom';
-import {PostData} from '../../services/PostData';
+import { Redirect } from 'react-router-dom';
+import { PostData } from '../../services/PostData';
 
 class Login extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       username: '',
       password: '',
       redirectToReferrer: false
     };
-
     this.login = this.login.bind(this);
     this.onChange = this.onChange.bind(this);
   }
@@ -34,12 +33,7 @@ class Login extends Component {
   }
 
   render() {
-
-    if (this.state.redirectToReferrer) {
-      return (<Redirect to={'/'} />)
-    }
-
-    if (sessionStorage.getItem('userData')) {
+    if (this.state.redirectToReferrer || sessionStorage.getItem('userData')) {
       return (<Redirect to={'/'} />)
     }
 
@@ -58,4 +52,5 @@ class Login extends Component {
     );
   }
 }
+
 export default Login;
