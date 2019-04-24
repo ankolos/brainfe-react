@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import Header from './component/Header';
-import Home from './component/Home';
-import Search from './component/Search';
-import About from './component/About';
-import Footer from './component/Footer';
-import Navbar from './component/Navbar';
-import LoginControl from './component/LoginControl';
+import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import Search from './components/Search/Search';
+import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
     super();
-    this.state = { isLoggedIn: false };
+    this.state = { isLoggedIn: true };
     this.clickHendler = this.clickHendler.bind(this)
   }
 
@@ -29,8 +27,7 @@ class App extends Component {
         <div className="container border-left border-right border-dark">
           <div className="row">
 
-            {/* Login control */}
-            <LoginControl onClick={this.clickHendler} />
+          LoginControl
 
             {/* Navbar */}
             <Navbar />
@@ -38,7 +35,6 @@ class App extends Component {
             {/* Main block*/}
             <Route exact path="/" component={Home} />
             <Route path="/search" component={Search} />
-            <Route path="/about" component={About} />
           </div>
         </div>
       </Router>
@@ -47,9 +43,7 @@ class App extends Component {
       content = <Router>
         <div className="container border-left border-right border-dark">
           <div className="row">
-
-            {/* Login control */}
-            <LoginControl onClick={this.clickHendler} />
+LoginControl
           </div>
         </div>
       </Router>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { data, age, sexuality, race, eyeColor, hairColor } from '../config/data';
-import '../css/Search.css';
+import { data, age, sexuality, race, eyeColor, hairColor } from '../.././config/data';
+import './Search.css';
 
 class Search extends Component {
   constructor() {

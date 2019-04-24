@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 class Navbar extends Component {
   render() {
@@ -35,12 +36,12 @@ class NavItem extends Component {
       <li className="nav-item">
         <div className="container">
           <div className="row">
-            <div className="col-8 border border-dark">
+            <div className="col-8">
               <Link className="nav-link mr-2" to={this.props.path}>{this.props.page}</Link>
             </div>
-            <div className="col-4 border border-dark p-0">
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target={"#" + this.props.id}>
-                <span className="navbar-toggler-icon"></span>
+            <div className="col-4 p-0">
+              <button className="navbar-toggler p-1" type="button" data-toggle="collapse" data-target={"#" + this.props.id}>
+                <span className="navbar-toggler-icon "></span>
               </button>
             </div>
           </div>
