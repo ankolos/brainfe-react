@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../assets/images/logo.png';
 
 class Header extends Component {
   constructor() {
@@ -19,7 +18,7 @@ class Header extends Component {
       <div className="container p-0 mt-2">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-top">
           <a className="navbar-brand font-italic" href="/">
-            <img src={logo} width="40" height="40" className="d-inline-block align-bottom mr-2" alt="" />
+            <img src="assets/images/logo.png" width="40" height="40" className="d-inline-block align-bottom mr-2" alt="" />
             Admin pannel
         </a>
           <div className="collapse navbar-collapse justify-content-end" id="navbarText">
