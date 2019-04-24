@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Header />
-        <Routes />
+        <Routes/>
         <Footer />
       </React.Fragment>
     );

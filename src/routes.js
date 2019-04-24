@@ -1,25 +1,26 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Search from './components/Search/Search';
-import Navbar from './components/Navbar/Navbar';
-
+import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
+import NotFound from './components/NotFound/NotFound';
 
 const Routes = () => (
   <BrowserRouter >
-    <Switch>
-      <div className="container border-left border-right border-dark">
-        <div className="row">
-
-          {/* Navbar */}
-          <Navbar />
-
-          {/* Main block*/}
-          <Route exact path="/(|home)" component={Home} />
+    <div className="container border-left border-right border-dark">
+      <div className="row">
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
           <Route path="/search" component={Search} />
-        </div>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="*" component={NotFound} />
+        </Switch>
       </div>
-    </Switch>
+    </div>
   </BrowserRouter>
 );
 
