@@ -18,11 +18,6 @@ class Navbar extends Component {
               page="Search"
               path="/search"
               links={["searchlink1", "searchlink2", "searchlink3"]} />
-            <NavItem
-              id="collapsibleNavbarAbout"
-              page="About"
-              path="/about"
-              links={["aboutlink1", "aboutlink2", "aboutlink3"]} />
           </ul>
         </nav>
       </div>
@@ -59,4 +54,5 @@ class NavItem extends Component {
     );
   }
 }
+
 export default Navbar;
