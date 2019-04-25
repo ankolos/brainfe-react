@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link} from 'react-router-dom';
 
 class Logout extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class Logout extends Component {
         <div className="container">
           <div className="row">
             <div className="col-8">
-              <a className="nav-link mr-2" onClick={this.logout}>Logout</a>
+              <Link className="nav-link mr-2" onClick={this.logout}>Logout</Link>
             </div>
           </div>
         </div>

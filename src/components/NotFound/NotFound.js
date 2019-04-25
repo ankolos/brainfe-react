@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 class NotFound extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class NotFound extends Component {
             <h1>Oops!</h1>
             <h2>404 Not Found</h2>
             <p className="error-details">Sorry, an error has occured, Requested page not found!</p>
-            <a href="/" className="btn btn-outline-dark">Take Me Home </a>
+            <Link to="/" className="btn btn-outline-dark">Take Me Home </Link>
           </div>
         </div>
       </div>

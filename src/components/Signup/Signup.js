@@ -18,7 +18,8 @@ class Signup extends Component {
 
   }
 
-  signup() {
+  signup(e) {
+    e.preventDefault();
     if (this.state.username && this.state.password && this.state.email && this.state.name) {
       PostData('signup', this.state).then((result) => {
         let responseJson = result;
@@ -39,28 +40,11 @@ class Signup extends Component {
     if (this.state.redirectToReferrer || sessionStorage.getItem('userData')) {
       return (<Redirect to={'/'} />)
     }
-    // return (
-    //   <div className="row " id="Body">
-    //     <div className="medium-5 columns left">
-    //       <h4>Signup</h4>
-    //       <label>Email</label>
-    //       <input type="text" name="email" placeholder="Email" onChange={this.onChange} />
-    //       <label>Name</label>
-    //       <input type="text" name="name" placeholder="Name" onChange={this.onChange} />
-    //       <label>Username</label>
-    //       <input type="text" name="username" placeholder="Username" onChange={this.onChange} />
-    //       <label>Password</label>
-    //       <input type="password" name="password" placeholder="Password" onChange={this.onChange} />
-    //       <input type="submit" className="button" value="Sign Up" onClick={this.signup} />
-    //       <a href="/login">Login</a>
-    //     </div>
-
-    //   </div>
 
     return (
       <div className="container">
         <div className="row justify-content-center m-2">
-          <form className="form-group border rounded p-4">
+          <form onSubmit={this.signup} className="form-group border rounded p-4">
             <div className="form-group">
               <label for="email">Email:</label>
               <input type="text" className="form-control" id="email" placeholder="Enter email" name="email" onChange={this.onChange} />
@@ -82,9 +66,8 @@ class Signup extends Component {
                 <input className="form-check-input" type="checkbox" name="remember" /> Remember me
   </label>
             </div>
-            <button type="button" className="btn btn-outline-dark" onClick={this.signup}>Signup</button>
-            <button type="button" className="btn btn-outline-dark ml-2">
-              <Link to="/login">Login</Link></button>
+            <button type="submit" className="btn btn-outline-dark">Signup</button>
+            <Link className="btn btn-outline-dark ml-2" to="/login">Login</Link>
           </form>
         </div>
       </div>
