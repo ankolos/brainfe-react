@@ -115,7 +115,6 @@ class Home extends Component {
          
         <div className="row" id="Body">
         <div className="medium-12 columns">
-          <a href="#" onClick={this.logout} className="logout">Logout</a>
           <form onSubmit={this.feedUpdate} method="post">
             <input name="userFeed" onChange={this.onChange} value={this.state.userFeed} type="text" placeholder="What's up?" />
             <input

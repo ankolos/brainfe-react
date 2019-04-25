@@ -47,7 +47,7 @@ class NavItem extends Component {
           <ul className="navbar-nav">
             {this.props.links.map((v, k) =>
               <li className="nav-item" key={k}>
-                <a className="nav-link" href="#">{v}
+                <a className="nav-link" href="/">{v}
                 </a>
               </li>)}
           </ul>

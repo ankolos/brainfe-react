@@ -162,7 +162,7 @@ class Search extends Component {
               alt="img" />
             <div className="overlay">
               <h2>{array["name"]}</h2>
-              <a className="info" href="#">Age: {array["age"]}</a>
+              <a className="info" href="/">Age: {array["age"]}</a>
             </div>
           </div>
         </div>)
