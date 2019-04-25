@@ -46,7 +46,7 @@ class NavItem extends Component {
         <div className="collapse navbar-collapse" id={this.props.id}>
           <ul className="navbar-nav">
             {this.props.links.map((v, k) =>
-              <li className="nav-item">
+              <li className="nav-item" key={k}>
                 <a className="nav-link" href="#">{v}
                 </a>
               </li>)}

@@ -17,15 +17,12 @@ class Logout extends Component {
   }
 
   render() {
-    if (this.state.redirectToReferrer) {
-      return (<Redirect to={'/login'} />)
-    }
     return (
       <li className="nav-item">
         <div className="container">
           <div className="row">
             <div className="col-8">
-              <Link className="nav-link mr-2" onClick={this.logout}>Logout</Link>
+              <Link to="/login" className="nav-link mr-2" onClick={this.logout}>Logout</Link>
             </div>
           </div>
         </div>
