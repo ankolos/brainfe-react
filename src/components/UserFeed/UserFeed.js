@@ -10,9 +10,9 @@ class UserFeed extends Component {
     let userFeed = this
       .props
       .feedData
-      .map(function (feedData, index) {
+      .map((v, k) => {
         return (
-          <div className="row rounded shadow-lg mx-2 my-4" key={index}>
+          <div className="row rounded shadow-lg mx-2 my-4" key={k}>
             <div className="container">
               <div className="row">
                 <div className="col p-2">
@@ -21,15 +21,15 @@ class UserFeed extends Component {
               </div>
               <div className="row">
                 <div className="col p-2">
-                  <p className="m-0">{feedData.feed}</p>
+                  <p className="m-0">{v.feed}</p>
                 </div>
               </div>
               <div className="row">
                 <div className="col p-2">
-                  <TimeAgo className="small" date={this.props.convertTime(feedData.created)} />
+                  <TimeAgo className="small" date={this.props.convertTime(v.created)} />
                 </div>
                 <div className="col p-2 text-right">
-                  <button className="btn btn-sm btn-outline-dark" onClick={this.props.deleteUserFeed} data={feedData.feed_id} value={index}>Delete</button>
+                  <button className="btn btn-sm btn-outline-dark" onClick={this.props.deleteUserFeed} data={v.feed_id} value={k}>Delete</button>
                 </div>
               </div>
             </div>
