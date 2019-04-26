@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { confirmAlert } from 'react-confirm-alert';
 import Navbar from '../../components/Navbar/Navbar';
 import { PostData } from '../../services/PostData';
 import UserFeed from '../../components/UserFeed/UserFeed';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class Home extends Component {
   constructor(props) {
@@ -18,9 +19,8 @@ class Home extends Component {
     this.updateUserFeed = this.updateUserFeed.bind(this);
     this.deleteUserFeed = this.deleteUserFeed.bind(this);
     this.convertTime = this.convertTime.bind(this);
-
     this.onChange = this.onChange.bind(this);
-    //this.deleteFeed = this.deleteFeed.bind(this);
+    this.confirmPopup = this.confirmPopup.bind(this);
   }
 
   componentWillMount() {
@@ -68,7 +68,6 @@ class Home extends Component {
     if (this.state.userFeed) {
       PostData('feedUpdate', postData).then((result) => {
         let feedData = [result.feedData].concat(this.state.data);
-        console.log(result.feedData);
         this.setState({
           data: feedData,
           userFeed: ''
@@ -84,7 +83,6 @@ class Home extends Component {
   deleteUserFeed(e) {
     let updateIndex = e.target.getAttribute('value');
     let feed_id = e.target.getAttribute('data');
-
     let data = JSON.parse(sessionStorage.getItem("userData"));
     let postData = {
       user_id: data.userData.user_id,
@@ -111,21 +109,33 @@ class Home extends Component {
     return date;
   }
 
+  /**
+   * Set userFeed state by event
+   * @param {*} e 
+   */
   onChange(e) {
     this.setState({ userFeed: e.target.value });
   }
 
-  // deleteFeed(e) {
-  //   confirmAlert({
-  //     title: '',
-  //     message: 'Are you sure?',
-  //     childrenElement: () => '',
-  //     confirmLabel: 'Delete',
-  //     cancelLabel: 'Cancel',
-  //     onConfirm: () => this.deleteFeedAction(e),
-  //     onCancel: () => '',
-  //   })
-  // }
+  /**
+   * Call confirm popup before delete user feed
+   */
+  confirmPopup = (e) => {
+    confirmAlert({
+      title: '',
+      message: 'Are you sure to do this?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => this.deleteUserFeed({e})
+        },
+        {
+          label: 'No',
+          onClick: () => ''
+        }
+      ]
+    });
+  };
 
   render() {
     if (this.state.redirectToReferrer) {

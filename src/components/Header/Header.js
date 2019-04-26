@@ -18,8 +18,8 @@ class Header extends Component {
       <div className="container p-0 mt-2">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-top">
           <a className="navbar-brand font-italic" href="/">
-            <img src="assets/images/logo.png" width="40" height="40" className="d-inline-block align-bottom mr-2" alt="" />
-            Admin pannel
+            <img src="assets/images/react-logo.webp" width="45" height="40" className="d-inline-block align-bottom mr-2" alt="" />
+            Brain-FE
         </a>
           <div className="collapse navbar-collapse justify-content-end" id="navbarText">
             <span className="navbar-text d-inline-block align-bottom">
