@@ -149,7 +149,7 @@ class Home extends Component {
             <div className="row justify-content-left m-2">
               <form className="form-inline" onSubmit={this.updateUserFeed}>
                 <div className="form-group mr-2">
-                  <textarea className="form-control" rows="1" type="text" id="userFeed" name="userFeed" placeholder="What's up?" value={this.state.userFeed} onChange={this.onChange} />
+                  <textarea className="form-control" rows="1" cols="35" type="text" id="userFeed" name="userFeed" placeholder="What's up?" value={this.state.userFeed} onChange={this.onChange} />
                 </div>
                 <button type="submit" className="btn btn-outline-dark">Post</button>
               </form>

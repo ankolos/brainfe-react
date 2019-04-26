@@ -41,16 +41,16 @@ class Login extends Component {
     return (
       <div className="container">
         <div className="row justify-content-center m-2">
-          <form onSubmit={this.login} className="form-group border rounded p-4 needs-validation" novalidate>
+          <form className="was-validated border rounded p-4" onSubmit={this.login}>
             <div className="form-group">
               <label for="username">Username:</label>
-              <input type="text" className="form-control" id="username" placeholder="Enter username" name="username" onChange={this.onChange} required/>
-              <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
+              <input type="text" className="form-control" id="username" placeholder="Enter username" name="username" onChange={this.onChange} required />
+              <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div className="form-group">
               <label for="password">Password:</label>
-              <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="password" onChange={this.onChange} required/>
+              <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="password" onChange={this.onChange} required />
+              <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div className="form-group form-check">
               <label className="form-check-label">
