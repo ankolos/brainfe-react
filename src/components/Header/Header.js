@@ -6,6 +6,7 @@ class Header extends Component {
 
     this.state = {
       ipAddress: "",
+      name: "Brain-FE"
     };
   }
 
@@ -19,7 +20,7 @@ class Header extends Component {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-top">
           <a className="navbar-brand font-italic" href="/">
             <img src="assets/images/react-logo.webp" width="45" height="40" className="d-inline-block align-bottom mr-2" alt="" />
-            Brain-FE
+            {this.state.name}
         </a>
           <div className="collapse navbar-collapse justify-content-end" id="navbarText">
             <span className="navbar-text d-inline-block align-bottom">
