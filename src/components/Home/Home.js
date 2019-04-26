@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import  { confirmAlert } from 'react-confirm-alert';
+import { confirmAlert } from 'react-confirm-alert';
 import Navbar from '../../components/Navbar/Navbar';
 import { PostData } from '../../services/PostData';
 import UserFeed from '../../components/UserFeed/UserFeed';
@@ -40,7 +40,6 @@ class Home extends Component {
       PostData('feedUpdate', postData).then((result) => {
         let responseJson = result;
         let K = [responseJson.feedData].concat(this.state.data);
-        console.log(K);
         this.setState({ data: K, userFeed: '' });
       });
     }
@@ -86,7 +85,6 @@ class Home extends Component {
   }
 
   getUserFeed() {
-
     let data = JSON.parse(sessionStorage.getItem("userData"));
     this.setState({ name: data.userData.name });
     let postData = { user_id: data.userData.user_id, token: data.userData.token };
@@ -112,24 +110,17 @@ class Home extends Component {
       <React.Fragment>
         <Navbar />
         <div className="col border border-dark rounded mt-2 mr-2 mb-2 p-0">
-         
-        <div className="row" id="Body">
-        <div className="medium-12 columns">
-          <form onSubmit={this.feedUpdate} method="post">
-            <input name="userFeed" onChange={this.onChange} value={this.state.userFeed} type="text" placeholder="What's up?" />
-            <input
-              type="submit"
-              value="Post"
-              className="button"
-              onClick={this.feedUpdate} />
-          </form>
-
-        </div>
-        <UserFeed feedData={this.state.data} deleteFeed={this.deleteFeed} convertTime={this.convertTime} name={this.state.name} />
-
-
-      </div>
-         
+          <div className="container">
+            <div className="row justify-content-left p-2">
+              <form className="form-inline" onSubmit={this.feedUpdate}>
+                <div class="form-group mr-2">
+                  <textarea className="form-control" rows="1" type="text" id="userFeed" name="userFeed" placeholder="What's up?" value={this.state.userFeed} onChange={this.onChange} />
+                </div>
+                <button type="submit" className="btn btn-outline-dark">Post</button>
+              </form>
+            </div>
+            <UserFeed feedData={this.state.data} deleteFeedAction={this.deleteFeedAction} convertTime={this.convertTime} name={this.state.name} />
+          </div>
         </div>
       </React.Fragment>
     );

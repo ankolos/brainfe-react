@@ -4,16 +4,12 @@ import { Link} from 'react-router-dom';
 class Logout extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      redirectToReferrer: false
-    };
     this.logout = this.logout.bind(this);
   }
 
   logout() {
     sessionStorage.setItem('userData', '');
     sessionStorage.clear();
-    this.setState({ redirectToReferrer: true });
   }
 
   render() {

@@ -37,7 +37,7 @@ class UserFeed extends Component {
             </div>
             <div className="small-12 medium-2 columns add-friend">
               <div className="add-friend-action">
-              <button className="button secondary small" onClick={this.props.deleteFeed} data={feedData.feed_id} value={index} >
+              <button className="button secondary small" onClick={this.props.deleteFeedAction} data={feedData.feed_id} value={index} >
               <i className="fa fa-user-times" aria-hidden="true"></i>
               Delete
             </button>
